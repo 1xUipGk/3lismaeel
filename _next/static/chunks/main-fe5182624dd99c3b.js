@@ -612,7 +612,7 @@ function AppContainer(param) {
     }, /*#__PURE__*/ _react.default.createElement(_headmanagercontextsharedruntime.HeadManagerContext.Provider, {
         value: headManager
     }, /*#__PURE__*/ _react.default.createElement(_imageconfigcontextsharedruntime.ImageConfigContext.Provider, {
-        value: {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true}
+        value: {"deviceSizes":[640,750,828,1080,1200,1920,2048,3840],"imageSizes":[16,32,48,64,96,128,256,384],"path":"/_next/image/","loader":"default","dangerouslyAllowSVG":false,"unoptimized":true}
     }, children))))))));
 }
 const wrapApp = (App)=>(wrappedAppProps)=>{
@@ -1061,7 +1061,15 @@ const normalizePathTrailingSlash = (path)=>{
         return path;
     }
     const { pathname, query, hash } = (0, _parsepath.parsePath)(path);
-    if (false) {}
+    if (true) {
+        if (/\.[^/]+\/?$/.test(pathname)) {
+            return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
+        } else if (pathname.endsWith("/")) {
+            return "" + pathname + query + hash;
+        } else {
+            return pathname + "/" + query + hash;
+        }
+    }
     return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
 };
 if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
@@ -4231,7 +4239,7 @@ function getMiddlewareData(source, response, options) {
         i18n: {
             locales: options.router.locales
         },
-        trailingSlash: Boolean(false)
+        trailingSlash: Boolean(true)
     };
     const rewriteHeader = response.headers.get("x-nextjs-rewrite");
     let rewriteTarget = rewriteHeader || response.headers.get("x-nextjs-matched-path");

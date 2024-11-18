@@ -5129,7 +5129,15 @@ const normalizePathTrailingSlash = (path)=>{
         return path;
     }
     const { pathname, query, hash } = (0, _parsepath.parsePath)(path);
-    if (false) {}
+    if (true) {
+        if (/\.[^/]+\/?$/.test(pathname)) {
+            return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
+        } else if (pathname.endsWith("/")) {
+            return "" + pathname + query + hash;
+        } else {
+            return pathname + "/" + query + hash;
+        }
+    }
     return "" + (0, _removetrailingslash.removeTrailingSlash)(pathname) + query + hash;
 };
 if ((typeof exports.default === "function" || typeof exports.default === "object" && exports.default !== null) && typeof exports.default.__esModule === "undefined") {
