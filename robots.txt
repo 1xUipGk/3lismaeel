@@ -1,0 +1,32 @@
+# 3lismaeel.com robots.txt
+User-agent: *
+Allow: /
+Allow: /portfolio
+Allow: /contact
+Allow: /work-policies
+Allow: /financial-policies
+Allow: /blog/
+Allow: /blog/*
+Disallow: /review
+Disallow: /api/
+Disallow: /_next/
+Disallow: /*?*
+
+# Media files
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.png$
+Allow: /*.svg$
+
+# Document files
+Allow: /*.pdf$
+
+# Crawl delay
+Crawl-delay: 10
+
+# Host
+Host: https://3lismaeel.xyz
+
+# Sitemaps
+Sitemap: https://3lismaeel.xyz/sitemap.xml 
