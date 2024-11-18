@@ -566,14 +566,16 @@ function LoadingSpinner() {
 /* unused harmony export getBlogPost */
 const BLOG_ID = "279667659503645305";
 const API_KEY = "AIzaSyD63hBPKHJmj5oQC5n8dzO4u5edlR81OJU";
+// دالة مساعدة للحصول على المسار الأساسي
+const getBasePath = ()=> true ? "/3lismaeel" : 0;
 // بيانات ثابتة للبناء
 const STATIC_POSTS = [
     {
         id: "6497840499876073",
         title: "كيف تبدأ في تعلم البرمجة",
-        content: '\n      <h2>كيف تبدأ في تعلم البرمجة</h2>\n      <p>تعلم البرمجة رحلة ممتعة تحتاج إلى الصبر والمثابرة...</p>\n      <img src="/images/blog/programming.jpg" alt="تعلم البرمجة" />\n      <p>في هذا المقال سنتعرف على أهم الخطوات للبدء في تعلم البرمجة...</p>\n    ',
+        content: '\n      <h2>كيف تبدأ في تعلم البرمجة</h2>\n      <p>تعلم البرمجة رحلة ممتعة تحتاج إلى الصبر والمثابرة...</p>\n      <img src="'.concat(getBasePath(), '/images/blog/programming.jpg" alt="تعلم البرمجة" />\n      <p>في هذا المقال سنتعرف على أهم الخطوات للبدء في تعلم البرمجة...</p>\n    '),
         excerpt: "تعلم البرمجة رحلة ممتعة تحتاج إلى الصبر والمثابرة...",
-        imageUrl: "/images/blog/programming.jpg",
+        imageUrl: "".concat(getBasePath(), "/images/blog/programming.jpg"),
         createdAt: "2024-01-01T00:00:00Z",
         views: 0,
         isUpdated: false,
@@ -582,9 +584,9 @@ const STATIC_POSTS = [
     {
         id: "4300175848306059715",
         title: "أساسيات تطوير الويب",
-        content: '\n      <h2>أساسيات تطوير الويب</h2>\n      <p>تطوير الويب يتطلب فهم عدة تقنيات أساسية...</p>\n      <img src="/images/blog/web-dev.jpg" alt="تطوير الويب" />\n      <p>سنتعرف في هذا المقال على أهم التقنيات المطلوبة...</p>\n    ',
+        content: '\n      <h2>أساسيات تطوير الويب</h2>\n      <p>تطوير الويب يتطلب فهم عدة تقنيات أساسية...</p>\n      <img src="'.concat(getBasePath(), '/images/blog/web-dev.jpg" alt="تطوير الويب" />\n      <p>سنتعرف في هذا المقال على أهم التقنيات المطلوبة...</p>\n    '),
         excerpt: "تطوير الويب يتطلب فهم عدة تقنيات أساسية...",
-        imageUrl: "/images/blog/web-dev.jpg",
+        imageUrl: "".concat(getBasePath(), "/images/blog/web-dev.jpg"),
         createdAt: "2024-01-02T00:00:00Z",
         views: 0,
         isUpdated: false,
@@ -649,7 +651,7 @@ async function getBlogPost(id) {
 }
 function extractFirstImage(content) {
     const match = content.match(/<img[^>]+src="([^">]+)"/);
-    return match ? match[1] : "/images/blog/default.jpg";
+    return match ? match[1] : "".concat(getBasePath(), "/images/blog/default.jpg");
 }
 
 
