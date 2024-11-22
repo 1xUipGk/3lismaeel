@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "buildCommand": "next build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "env": {
+    "NEXT_PUBLIC_BLOG_ID": "${NEXT_PUBLIC_BLOG_ID}",
+    "NEXT_PUBLIC_BLOGGER_API_KEY": "${NEXT_PUBLIC_BLOGGER_API_KEY}"
+  },
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@vercel/next"
+    }
+  ]
+} 

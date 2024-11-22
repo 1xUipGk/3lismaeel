@@ -1,0 +1,302 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './styles/custom.css';
+@import './styles/review.css';
+@import './styles/blog.css';
+
+:root {
+  --primary: #FF4D00;
+  --text: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --background: #000000;
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-tajawal), sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.5;
+  position: relative;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(1px 1px at 10% 10%, rgba(255, 255, 255, 0.1) 1px, transparent 0),
+    radial-gradient(1px 1px at 20% 20%, rgba(255, 255, 255, 0.1) 1px, transparent 0),
+    radial-gradient(1px 1px at 30% 30%, rgba(255, 255, 255, 0.1) 1px, transparent 0),
+    radial-gradient(1px 1px at 40% 40%, rgba(255, 255, 255, 0.1) 1px, transparent 0),
+    radial-gradient(1px 1px at 50% 50%, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+  background-size: 100% 100%;
+  animation: starsAnimation 100s linear infinite;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255, 77, 0, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 77, 0, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes starsAnimation {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
+  }
+
+  .nav-link {
+    @apply text-secondary hover:text-primary transition-colors duration-300 
+           text-sm font-medium py-3 px-4 w-full text-center;
+  }
+
+  @media (min-width: 768px) {
+    .nav-link {
+      @apply w-auto py-2;
+    }
+  }
+
+  /* Sections */
+  section {
+    @apply py-16 sm:py-20 md:py-24;
+  }
+
+  .section-container {
+    @apply container mx-auto px-4;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply px-6 py-2 rounded-lg transition-colors duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-opacity-90;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-opacity-90;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-card-bg rounded-lg p-6 border border-border;
+  }
+
+  /* Forms */
+  .form-input {
+    @apply w-full px-4 py-2 rounded-lg border border-border bg-card-bg 
+           focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium mb-2;
+  }
+}
+
+.not-found-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.not-found-content {
+  max-width: 600px;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 0;
+  line-height: 1;
+}
+
+.error-title {
+  font-size: 2rem;
+  margin: 1rem 0;
+  color: var(--text-color);
+}
+
+.error-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+
+.home-button {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.home-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.contact-button {
+  background-color: var(--background-secondary);
+  color: var(--text-color);
+}
+
+.contact-button:hover {
+  background-color: var(--background-hover);
+}
+
+.button-icon {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+  
+  .error-title {
+    font-size: 1.5rem;
+  }
+  
+}
+
+/* منع FOUC (Flash of Unstyled Content) للأيقونات */
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -0.125em;
+}
+
+.error-container {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.error-container p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.loading-container {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* إضافة هذه الأنماط */
+.blog-post img {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 1rem auto !important;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.blog-post-image {
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .blog-post img {
+    width: 100%;
+    margin: 0.5rem auto !important;
+  }
+}
+
+/* زر العودة للأعلى */
+.tTb {
+  position: fixed;
+  bottom: 80px;
+  inset-inline-end: 30px;
+  width: 34px;
+  height: 34px;
+  background: #1a1a1a;
+  color: #FF4D00;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 50;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tTb svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tTb circle:last-of-type {
+  stroke: #FF4D00;
+  stroke-width: 1.5;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+.tTb:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.tTb circle:first-of-type {
+  opacity: 0.1;
+}
+
+@media (max-width: 768px) {
+  .tTb {
+    bottom: 60px;
+    inset-inline-end: 20px;
+  }
+}

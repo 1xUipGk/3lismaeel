@@ -1,0 +1,4 @@
+# 3lismaeel.com robots.txt
+User-agent: *
+Allow: /
+Sitemap: https://3lismaeel.xyz/sitemap.xml 
