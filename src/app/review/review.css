@@ -1,0 +1,430 @@
+/* Container */
+.review-container {
+  min-height: calc(100vh - 73px);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 100px;
+  position: relative;
+  overflow: hidden;
+  margin: 73px auto 0;
+  background: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .review-container {
+    width: 100%;
+    padding: 60px 20px 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .review-container {
+    padding: 40px 20px 60px;
+  }
+}
+
+/* Rating Section */
+.rating-group {
+  text-align: center;
+  margin: 32px 0;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.rating-group:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 77, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.rating-stars {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.rating-stars svg {
+  width: 32px;
+  height: 32px;
+  color: rgba(255, 215, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rating-stars svg:hover,
+.rating-stars svg.active {
+  color: #FFD700;
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.5));
+}
+
+.rating-text {
+  display: block;
+  margin-top: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* تأثير التحويم على النجوم */
+.rating-stars:hover svg {
+  color: rgba(255, 215, 0, 0.2);
+}
+
+.rating-stars svg:hover ~ svg {
+  color: #FFD700;
+}
+
+.rating-stars:hover svg:hover,
+.rating-stars:hover svg:hover ~ svg {
+  color: #FFD700;
+  transform: scale(1.2);
+}
+
+/* تأثير الخلفية عند التحويم */
+.rating-group::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.05), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.rating-group:hover::before {
+  opacity: 1;
+}
+
+/* تحسين التصميم المتجاوب */
+@media (max-width: 768px) {
+  .rating-group {
+    padding: 20px;
+  }
+
+  .rating-stars svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .rating-stars {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rating-group {
+    padding: 16px;
+  }
+
+  .rating-stars svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .rating-stars {
+    gap: 8px;
+  }
+}
+
+/* Thank You Message Container */
+.thank-you-message {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Thank You Content */
+.thank-you-content {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 
+    0 4px 24px -1px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.thank-you-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at top right, rgba(255, 77, 0, 0.1), transparent 50%),
+    radial-gradient(circle at bottom left, rgba(255, 77, 0, 0.05), transparent 50%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Icon Styles */
+.thank-you-icon {
+  font-size: 64px;
+  margin-bottom: 24px;
+  animation: iconPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.thank-you-icon.success {
+  color: #22c55e;
+  filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.3));
+}
+
+.thank-you-icon.warning {
+  color: #f59e0b;
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.3));
+}
+
+/* Title & Text */
+.thank-you-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  animation: fadeInUp 0.5s ease 0.2s both;
+}
+
+.thank-you-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+  animation: fadeInUp 0.5s ease 0.3s both;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 32px;
+  background: linear-gradient(45deg, var(--primary), #FF6B00);
+  color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease 0.4s both;
+}
+
+.back-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 20px rgba(255, 77, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.back-btn:hover::before {
+  transform: translateX(100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes iconPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .thank-you-content {
+    padding: 32px 24px;
+  }
+
+  .thank-you-icon {
+    font-size: 48px;
+  }
+
+  .thank-you-title {
+    font-size: 24px;
+  }
+
+  .thank-you-text {
+    font-size: 14px;
+  }
+
+  .back-btn {
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+/* Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 14px;
+  z-index: 1000;
+  animation: slideIn 0.3s ease;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.notification.success { background: rgba(34, 197, 94, 0.9); }
+.notification.error { background: rgba(239, 68, 68, 0.9); }
+.notification.info { background: rgba(59, 130, 246, 0.9); }
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Loading Spinner */
+.loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.spinner {
+  animation: spin 1s linear infinite;
+  color: var(--primary);
+  font-size: 32px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* File Input Styles */
+.file-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.file-input::-webkit-file-upload-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  padding: 8px 12px;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.file-input::-webkit-file-upload-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.file-input:hover {
+  border-color: var(--primary);
+  background: rgba(255, 77, 0, 0.05);
+}
+
+/* تحسين مظهر input file في Firefox */
+.file-input::-moz-file-upload-button {
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-radius: 8px;
+  color: var(--text);
+  padding: 8px 12px;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.file-input::-moz-file-upload-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+} 
