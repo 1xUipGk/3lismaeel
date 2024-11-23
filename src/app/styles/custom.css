@@ -171,7 +171,7 @@ section {
 }
 
 .primary-btn {
-  background: linear-gradient(45deg, var(--primary), #FF6B00);
+  background: linear-gradient(45deg, var(--primary), #dc1a1e);
   box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
   color: white;
   padding: 16px 32px;
@@ -279,7 +279,7 @@ section {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    background: linear-gradient(45deg, var(--primary), #FF6B00);
+    background: linear-gradient(45deg, var(--primary), #dc1a1e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -328,7 +328,7 @@ section {
 .service-icon {
     width: 70px;
     height: 70px;
-    background: linear-gradient(45deg, var(--primary), #FF6B00);
+    background: linear-gradient(45deg, var(--primary), #dc1a1e);
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -380,7 +380,7 @@ section {
 }
 
 button#showMoreServices {
-    background: linear-gradient(45deg, #ff6700, #FF6B00);
+    background: linear-gradient(45deg, #ff6700, #dc1a1e);
     box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
     color: white;
     padding: 12px 26px;
@@ -406,7 +406,7 @@ button#showMoreServices:hover .icon-more {
     transform: translateY(2px);
 }
 a.error-link , a.error-primary-btn {
-  background: linear-gradient(45deg, var(--primary), #ff6b00);
+  background: linear-gradient(45deg, var(--primary), #dc1a1e);
   box-shadow: 0 4px 15px rgba(255, 77, 0, .3);
   color: #fff;
   padding: 12px 32px;
@@ -658,7 +658,7 @@ a.error-link , a.error-primary-btn {
 }
 
 .nav-btn:hover {
-    background: #ff6b00;
+    background: #dc1a1e;
     transform: translateY(-50%) scale(1.1);
     opacity: 1;
 }
@@ -1643,7 +1643,7 @@ html {
 .submit-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(255, 77, 0, 0.4);
-  background: linear-gradient(45deg, var(--primary), #FF6B00);
+  background: linear-gradient(45deg, var(--primary), #dc1a1e);
 }
 
 @media (max-width: 768px) {
@@ -1680,7 +1680,7 @@ html {
 .error-code {
   font-size: 8rem;
   font-weight: 700;
-  background: linear-gradient(45deg, var(--primary), #FF6B00);
+  background: linear-gradient(45deg, var(--primary), #dc1a1e);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1;
@@ -1703,7 +1703,7 @@ html {
 }
 
 .home-button {
-  background: linear-gradient(45deg, var(--primary), #FF6B00);
+  background: linear-gradient(45deg, var(--primary), #dc1a1e);
   color: white;
   padding: 1rem 2rem;
   border-radius: 100px;
