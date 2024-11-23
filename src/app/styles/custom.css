@@ -380,7 +380,7 @@ section {
 }
 
 button#showMoreServices {
-    background: linear-gradient(45deg, #ff6700, #dc1a1e);
+    background: linear-gradient(45deg, var(--primary), #dc1a1e)
     box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
     color: white;
     padding: 12px 26px;
