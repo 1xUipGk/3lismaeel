@@ -6,7 +6,7 @@
 @import './styles/blog.css';
 
 :root {
-  --primary: #FF4D00;
+  --primary: #b8171c;
   --text: #FFFFFF;
   --text-secondary: rgba(255, 255, 255, 0.5);
   --background: #000000;
@@ -261,7 +261,7 @@ body::after {
   width: 34px;
   height: 34px;
   background: #1a1a1a;
-  color: #FF4D00;
+  color: #b8171c;
   border: none;
   border-radius: 50%;
   display: flex;
@@ -280,7 +280,7 @@ body::after {
 }
 
 .tTb circle:last-of-type {
-  stroke: #FF4D00;
+  stroke: #b8171c;
   stroke-width: 1.5;
   transition: stroke-dasharray 0.3s ease;
 }
