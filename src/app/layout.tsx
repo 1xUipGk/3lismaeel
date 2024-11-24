@@ -33,7 +33,8 @@ export const metadata: Metadata = {
     'تصميم شهادات',
     'تصميم لوحات إعلانية',
     'مصمم جرافيك',
-    'علي إسماعيل'
+    'علي إسماعيل',
+    'Ali Ismaeel'
   ],
   authors: [{ name: 'علي إسماعيل', url: 'https://3lismaeel.xyz' }],
   creator: 'علي إسماعيل',
